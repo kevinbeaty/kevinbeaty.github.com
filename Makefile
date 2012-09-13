@@ -1,15 +1,18 @@
-.PHONY: all  clean serve source kevinbeaty mvw
-all: source 
-	mvw generate
-	mv site/*.html projects/kevinbeaty.github.com
-	cp -R site/css projects/kevinbeaty.github.com && rm -rf site/css
-	cp -R site/js projects/kevinbeaty.github.com && rm -rf site/js
+MASTER=projects/kevinbeaty.github.com
+.PHONY: all clean serve generate source kevinbeaty mvw
+all: generate
 
 clean:
 	rm -rf build
 
 serve: source
 	mvw
+
+generate: source
+	mvw generate
+	mv site/*.html $(MASTER)
+	cp -R site/css $(MASTER) && rm -rf site/css
+	cp -R site/js $(MASTER) && rm -rf site/js
 
 source: kevinbeaty mvw
 
