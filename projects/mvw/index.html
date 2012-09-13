@@ -1,0 +1,175 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>MVW</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+    <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+<body>
+    <div id="header-container">
+        
+        <header class="wrapper clearfix">
+            <h1 id="title"><a href="/">the Beaty</a></h1>
+            <nav>
+                <ul>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/projects/index.html">Projects</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/projects/mvw/index.html">MVW</a>
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </header>
+        
+    </div>
+    <div id="main-container">
+        <div id="main" class="wrapper clearfix">
+            <article>
+                <section>
+                
+                <p>MVW is a minimal personal wiki engine.</p>
+<h2>Quick start</h2>
+<ol>
+<li>
+<p>Install</p>
+<div class="syntax"><pre><span class="c"># Install from github</span>
+<span class="nv">$ </span>pip install -e <span class="se">\</span>
+&gt; git://github.com/kevinbeaty/mvw.git#egg<span class="o">=</span>MVW
+</pre></div>
+
+
+</li>
+<li>
+<p>Create</p>
+<div class="syntax"><pre><span class="c"># Use your favorite editor to create content</span>
+<span class="nv">$ </span>vim notes.md
+<span class="c"># Directory trees will be preserved</span>
+<span class="nv">$ </span>vim git/install.md
+</pre></div>
+
+
+</li>
+<li>
+<p>View</p>
+<div class="syntax"><pre><span class="c"># Locally serve the wiki. Markdown files</span>
+<span class="c"># are regenerated when page is refreshed</span>
+<span class="nv">$ </span>mvw
+</pre></div>
+
+
+</li>
+</ol>
+<h2>Longer start</h2>
+<ol>
+<li>
+<p>Install MVW from <a href="http://github.com/kevinbeaty/mvw">github</a></p>
+<div class="syntax"><pre><span class="nv">$ </span>mkproject wiki 
+<span class="nv">$ </span>pip install -e <span class="se">\</span>
+&gt; git://github.com/kevinbeaty/mvw.git#egg<span class="o">=</span>MVW
+</pre></div>
+
+
+<p>The <a href="http://www.doughellmann.com/docs/virtualenvwrapper/command_ref.html#project-directory-management"><code>mkproject</code></a> command is part of <a href="http://www.doughellmann.com/docs/virtualenvwrapper/">virtualenvwrapper</a>
+It will allow you to call <code>deactivate</code> when you are done and 
+remove <code>mvw</code> from your path.  Later you can call <code>workon wiki</code> 
+to switch to your <code>wiki</code> virtualenv and automatically <code>cd</code> into
+your wiki directory.</p>
+</li>
+<li>
+<p>Add some content using <a href="http://daringfireball.net/projects/markdown/">Markdown</a></p>
+<div class="syntax"><pre><span class="nv">$ </span>cat &gt; hello.md <span class="s">&lt;&lt;EOT</span>
+<span class="s">&gt; # Greetings</span>
+<span class="s">&gt; Hello World</span>
+<span class="s">&gt; EOT</span>
+</pre></div>
+
+
+<p>MVW uses the mostly reference implementation compliant 
+<a href="http://www.freewisdom.org/projects/python-markdown">Python-Markdown</a> with the <a href="code_hiliting.html">code hiliting</a> extension.
+Navigation links are generated automatically. Index files 
+are generated with empty content if index source files are
+not present.</p>
+</li>
+<li>
+<p>Serve the wiki locally</p>
+<div class="syntax"><pre><span class="nv">$ </span>mvw
+</pre></div>
+
+
+<p>This serves the wiki locally at <a href="http://localhost:8000">http://localhost:8000</a> from the 
+current working directory. Changes to the markdown files will be
+regenerated automatically as they are requested.</p>
+<p><strong>Note</strong>: <code>mvw</code> (or the alias <code>mvw serve</code>) should <strong>only</strong> be used to
+serve your wiki locally.  If you want to deploy your wiki, 
+<a href="site_generation.html">generate a static site</a>.</p>
+</li>
+</ol>
+                
+                </section>
+            </article>
+            
+             
+            <aside>
+                
+                <ul>
+                    
+                    <li>
+                        <a href="/projects/mvw/code_hiliting.html">Code Hiliting</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects/mvw/site_generation.html">Site Generation</a>
+                    </li>
+                    
+                </ul>
+                
+                <hr>
+                
+                
+
+                
+                <ul>
+                    
+                    <li>
+                        <a href="/projects/mvw/faq/index.html">FAQ</a>
+                    </li>
+                    
+                </ul>
+                
+            </aside>
+            
+            
+        </div> 
+    </div>
+
+    <div id="footer-container">
+        <footer class="wrapper clearfix">
+        
+        <small id='created-by'>Created using <a href="http://github.com/kevinbeaty/mvw">MVW</a></small>
+        
+        </footer>
+    </div>
+</body>
+</html>

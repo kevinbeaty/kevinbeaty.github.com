@@ -1,0 +1,128 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Site Generation</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+    <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+<body>
+    <div id="header-container">
+        
+        <header class="wrapper clearfix">
+            <h1 id="title"><a href="/">the Beaty</a></h1>
+            <nav>
+                <ul>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/projects/index.html">Projects</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/projects/mvw/index.html">MVW</a>
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </header>
+        
+    </div>
+    <div id="main-container">
+        <div id="main" class="wrapper clearfix">
+            <article>
+                <section>
+                
+                <ol>
+<li>
+<p>Initialize mvw at the root of your wiki</p>
+<div class="syntax"><pre><span class="nv">$ </span>mvw init
+</pre></div>
+
+
+<p>Creates an <code>.mvw</code> folder used for the generation of the site
+and to identify the site root for other commands.  Markdown files 
+can be created in any directory tree under the wiki root and this
+directory tree will be preserved when generating the site.</p>
+</li>
+<li>
+<p>Generate the wiki</p>
+<div class="syntax"><pre><span class="nv">$ </span>mvw generate
+</pre></div>
+
+
+<p>Call anywhere under the wiki root. MVW will search up the directory 
+tree for the <code>.mvw</code> folder created using <code>mvw init</code>.  A static site
+will be (re)generated in <code>.mvw/site</code> for the entire directory tree. 
+Markdown files will be parsed and surrounded with a template. Hidden 
+files and directories are ignored. Everything else is simply copied. 
+Directory trees are preserved.</p>
+</li>
+<li>
+<p>Deploy </p>
+<p>Copy the files generated in <code>.mvw/site</code> to your web server.</p>
+</li>
+</ol>
+                
+                </section>
+            </article>
+            
+             
+            <aside>
+                
+                <ul>
+                    
+                    <li>
+                        <a href="/projects/mvw/code_hiliting.html">Code Hiliting</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects/mvw/site_generation.html">Site Generation</a>
+                    </li>
+                    
+                </ul>
+                
+                <hr>
+                
+                
+
+                
+                <ul>
+                    
+                    <li>
+                        <a href="/projects/mvw/faq/index.html">FAQ</a>
+                    </li>
+                    
+                </ul>
+                
+            </aside>
+            
+            
+        </div> 
+    </div>
+
+    <div id="footer-container">
+        <footer class="wrapper clearfix">
+        
+        <small id='created-by'>Created using <a href="http://github.com/kevinbeaty/mvw">MVW</a></small>
+        
+        </footer>
+    </div>
+</body>
+</html>
