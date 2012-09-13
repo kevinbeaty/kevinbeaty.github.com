@@ -4,6 +4,3 @@
 [submodule "projects/kevinbeaty.github.com"]
 	path = projects/kevinbeaty.github.com
 	url = git@github.com:kevinbeaty/kevinbeaty.github.com
-[submodule "site/mvw"]
-	path = site/mvw
-	url = git@github.com:kevinbeaty/mvw
