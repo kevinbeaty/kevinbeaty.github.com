@@ -12,7 +12,7 @@ from mvw.config import Config
 # filters, extensions, tests, etc.
 # Custom extensions can be added to ${themedir}/extensions
 # which is added to python path if it exists.
-custom_titles = { 'mvw': 'MVW', 'faq': 'FAQ' }
+custom_titles = {'thebeaty':'the Beaty', 'mvw': 'MVW', 'faq': 'FAQ' }
 class CustomConfig(Config):
     def title(self, path):
         title = Config.title(self, path)

@@ -1,4 +1,4 @@
 ## Projects
 
-* [MVW](http://kevinbeaty.github.com/mvw/index.html)
+* [MVW](http://kevinbeaty.github.com/projects/mvw/index.html)
 * [github](http://github.com/kevinbeaty)
