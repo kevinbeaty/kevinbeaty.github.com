@@ -1,30 +1,31 @@
-MASTER=projects/kevinbeaty.github.com
-.PHONY: all clean serve generate source kevinbeaty mvw
+SRC=build/thebeaty
+SRC_PROJECT=$(SRC)/projects
+PROJECTS=mvw
+
+.PHONY: all clean serve generate src
+
 all: generate
 
 clean:
 	rm -rf build
 
-serve: source
+serve: src
 	mvw
 
-generate: source
+generate: src
 	mvw generate
-	mv site/*.html $(MASTER)
-	cp -R site/css $(MASTER) && rm -rf site/css
-	cp -R site/js $(MASTER) && rm -rf site/js
 
-source: kevinbeaty mvw
+src: $(SRC)/index.md $(SRC_PROJECT)
 
-build/source:
+$(SRC):
 	mkdir -p $@
 
-kevinbeaty: build/source/index.md
-
-build/source/index.md: README.md | build/source
+$(SRC)/index.md: README.md | $(SRC)
 	cp $< $@
 
-mvw: build/source/mvw
+$(SRC_PROJECT): $(PROJECTS:%=$(SRC_PROJECT)/%)
+	cp projects/index.md $@
 
-build/source/mvw: | build/source
-	cp -R projects/mvw/doc build/source/mvw
+$(SRC_PROJECT)/mvw:
+	mkdir -p $@
+	cp -R projects/mvw/doc/* $@

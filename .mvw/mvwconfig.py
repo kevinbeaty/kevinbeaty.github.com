@@ -17,11 +17,12 @@ class CustomConfig(Config):
     def title(self, path):
         title = Config.title(self, path)
         return custom_titles.get(title.lower(), title)
+
 config = CustomConfig()
 
 # Link text for site root when generating breadcrumb
 # Uses title generated from sourcedir name if not set
-config.breadcrumb_home = 'Home'
+#config.breadcrumb_home = 'Home'
 
 # The site root to use to prepend to generated links
 # when generating the site.  This only applies to
@@ -31,8 +32,8 @@ config.site_root = '/'
 
 # Directories are relative to mvw root (.mvw), but
 # can be absolute.
-config.sourcedir = '../build/source'
-config.outputdir = '../site'
+config.sourcedir = '../build/thebeaty'
+config.outputdir = '../projects/kevinbeaty.github.com'
 
 # Default theme will be used if themedir does not exist
 # Can use `mvw theme` to copy default theme to mvw root

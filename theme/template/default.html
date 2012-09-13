@@ -21,13 +21,15 @@
     <div id="header-container">
         {% block header %}
         <header class="wrapper clearfix">
-            <h1 id="title">{{ title }}</h1>
+            <h1 id="title"><a href="/">the Beaty</a></h1>
             <nav>
                 <ul>
                     {% for c in breadcrumb %}
+                    {% if not loop.first %}
                     <li>
                         <a href="{{ c.url }}">{{ c.title }}</a>
                     </li>
+                    {% endif %}
                     {% endfor %}
                 </ul>
             </nav>
