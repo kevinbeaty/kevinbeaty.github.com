@@ -53,10 +53,10 @@ th, td { padding: .8em; }
 body{ font:14px/24px Helvetica, Helvetica Neue, Arial, sans-serif; }
 .wrapper{ width:90%; margin:0 5%; }
 #header-container { border-bottom: 3px solid #6c9eaa; }
-#header-container, #main aside{ background:#c3b38e; }
-#header-container a { color:#583716; }
+#header-container, #main aside{ background-color: #583716;}
+#header-container a { color:#c3b38e; }
 #main aside ul { list-style: none; margin: 0; padding: 0; }
-#main aside a { color:#583716; }
+#main aside a { color:#c3b38e; }
 #title{ margin-top:0.5em}
 nav a{ display:block; margin-bottom:10px; padding:15px 0; color:#c3b38e; text-align:center; text-decoration:none; font-weight:bold; }
 #main{ padding:30px 0; }
