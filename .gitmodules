@@ -7,3 +7,6 @@
 [submodule "projects/underarm"]
 	path = projects/underarm
 	url = git@github.com:kevinbeaty/underarm.git
+[submodule "lib/mocha"]
+	path = lib/mocha
+	url = git://github.com/visionmedia/mocha.git
