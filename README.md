@@ -1,1 +1,1 @@
-[kevin.thebeaty.com](http://kevin.thebeaty.com)
+[kevinbeaty.net](http://kevinbeaty.net)
