@@ -5,12 +5,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { margin: 0; font-size: 14px; line-height: 1.25; background-color: #fff; }
-body, button, input, select, textarea { font-family: sans-serif; color: #0e2f37; }
+body, button, input, select, textarea { font-family: sans-serif; color: #000; }
 a { color: #6c9eaa; text-decoration: none; outline:0; }
-a:focus { text-decoration: none; color: #656b85; }
-a:hover, a:active { text-decoration: underline; color: #656b85; }
+a:hover, a:active { text-decoration: underline; }
 a:focus { outline: thin dotted; }
-a:active { outline: 0; }
 abbr[title] { border-bottom: 1px dotted; }
 b, strong { font-weight: bold; }
 blockquote { margin: 1em 40px; }
@@ -54,22 +52,23 @@ th, td { padding: .8em; }
  */
 body{ font:14px/24px Helvetica, Helvetica Neue, Arial, sans-serif; }
 .wrapper{ width:90%; margin:0 5%; }
-#header-container { border-bottom: 5px solid #c3b38e; }
-#header-container, #main aside{ background:#583716; }
+#header-container { border-bottom: 3px solid #6c9eaa; }
+#header-container, #main aside{ background-color: #583716;}
 #header-container a { color:#c3b38e; }
 #main aside ul { list-style: none; margin: 0; padding: 0; }
 #main aside a { color:#c3b38e; }
-#title{ color:#a65400; margin-top:0.5em}
+#title{ margin-top:0.5em}
 nav a{ display:block; margin-bottom:10px; padding:15px 0; color:#c3b38e; text-align:center; text-decoration:none; font-weight:bold; }
 #main{ padding:30px 0; }
 #main article h1{ font-size:2em; }
 #main aside{ padding:10px 5% 10px; }
 #footer-container footer{ padding:20px 0; } 
 #created-by { color:#c3b38e; float: right; }
-#created-by a { color: #9fa6c2; }
+#created-by a { color: #7ca1aa; }
 .ie7 #title{ padding-top:20px; }
 /* Pygments */
-.syntax {border-left:1px solid #864; margin: 1em; padding:5px 15px; }
+.syntax {border-left:1px solid #864; margin: 1em 0; padding:0 1em; }
+table .syntax { border: none; }
 .hll { background-color: #ffffcc }
 .c { color: #408080; font-style: italic }
 .err { border: 1px solid #FF0000 }
