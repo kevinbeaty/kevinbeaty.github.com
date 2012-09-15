@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tests</title>
+        <link href="/css/libs/mocha/mocha.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="mocha"></div>
+        <script src="/js/libs/mocha/mocha.js"></script>
+        <script>mocha.setup('bdd')</script>
+        <script src="/js/libs/expect/expect.js"></script>
+        <div>
+<script src="/js/underarm/underarm-0.0.1.min.js"></script>
+<script src="/js/underarm/tests/test.basic.js"></script>
+<script src="/js/underarm/tests/test.promise.js"></script>
+<script src="/js/underarm/tests/test.producer.js"></script>
+</div>
+        <script>mocha.run()</script>
+    </body>
+</html>
