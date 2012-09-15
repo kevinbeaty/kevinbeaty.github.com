@@ -1,6 +1,6 @@
 SRC=build/kevinbeaty
 SRC_PROJECT=$(SRC)/projects
-PROJECTS=mvw
+PROJECTS=mvw underarm
 
 .PHONY: all clean serve generate src
 
@@ -29,3 +29,7 @@ $(SRC_PROJECT): $(PROJECTS:%=$(SRC_PROJECT)/%)
 $(SRC_PROJECT)/mvw:
 	mkdir -p $@
 	cp -R projects/mvw/doc/* $@
+
+$(SRC_PROJECT)/underarm:
+	mkdir -p $@
+	cp projects/underarm/README.md $@/index.md 
