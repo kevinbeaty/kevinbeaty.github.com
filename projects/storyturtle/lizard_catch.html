@@ -5,15 +5,23 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Where</title>
+    <title>Lizard Catch</title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <link rel="stylesheet" href="/css/style.css">
     
+    <style type="text/css">
+        #storyturtle-story { display: none; }
+        #storyturtle-controls { width: 300px; height:25px; }
+        #storyturtle-play { float: left; }
+        #storyturtle-edit { float: right; }
+    </style>
+
 
     <script src="/js/libs/modernizr-2.0.6.min.js"></script>
 </head>
@@ -35,13 +43,7 @@
                     
                     
                     <li>
-                        <a href="/projects/mvw/index.html">MVW</a>
-                    </li>
-                    
-                    
-                    
-                    <li>
-                        <a href="/projects/mvw/faq/index.html">FAQ</a>
+                        <a href="/projects/storyturtle/index.html">Story Turtle</a>
                     </li>
                     
                     
@@ -55,9 +57,26 @@
             <article>
                 <section>
                 
-                <h1>Where?</h1>
-<p>On <a href="http://github.com/kevinbeaty/mvw">github</a></p>
+<canvas id="storyturtle-canvas" width="300" height="300"></canvas>
+
+                <div><textarea cols="30" rows="15" id="storyturtle-story" data-story="lizard_catch">
+queen is a shark at 123 234
+nolan is a leopard at 234 65
+fock is a lizard at 256 145
+berkely is a lizard at 145 123
+
+nolan moves to 123 235
+
+nolan dies
+</textarea></div>
                 
+
+<div id="storyturtle-controls">
+    <a href="#" id="storyturtle-play">Play!</a>
+    <a href="#" id="storyturtle-edit">Edit</a>
+</div>
+<div id="storyturtle-speaker"></div>
+
                 </section>
             </article>
             
@@ -67,23 +86,31 @@
                 <ul>
                     
                     <li>
-                        <a href="/projects/mvw/faq/what.html">What</a>
+                        <a href="/projects/storyturtle/dessert_shark.html">Dessert Shark</a>
                     </li>
                     
                     <li>
-                        <a href="/projects/mvw/faq/when.html">When</a>
+                        <a href="/projects/storyturtle/explosions.html">Explosions</a>
                     </li>
                     
                     <li>
-                        <a href="/projects/mvw/faq/where.html">Where</a>
+                        <a href="/projects/storyturtle/fish.html">Fish</a>
                     </li>
                     
                     <li>
-                        <a href="/projects/mvw/faq/who.html">Who</a>
+                        <a href="/projects/storyturtle/lizard_catch.html">Lizard Catch</a>
                     </li>
                     
                     <li>
-                        <a href="/projects/mvw/faq/why.html">Why</a>
+                        <a href="/projects/storyturtle/shark_bait.html">Shark Bait</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects/storyturtle/turtle_diner.html">Turtle Diner</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects/storyturtle/turtle_dinner.html">Turtle Dinner</a>
                     </li>
                     
                 </ul>
@@ -105,6 +132,26 @@
         </footer>
     </div>
     
+
     
+    <script src="/js/underarm/underarm-0.0.1.min.js"></script>
+    <script src="/js/storyturtle/storyturtle-0.0.5.min.js"></script>
+    <script>
+    var characters = [
+        'jellyfish',
+        'leopard',
+        'lizard',
+        'pufferfish',
+        'shark',
+        'shrimp',
+        'turtle']
+      , images = {}
+    _r(characters).each(function(character){
+        images[character] = '/img/storyturtle/'+character+'.png'
+    })
+
+    storyturtle({images:images});
+    </script>
+
 </body>
 </html>

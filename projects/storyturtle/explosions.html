@@ -1,0 +1,193 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Explosions</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style type="text/css">
+        #storyturtle-story { display: none; }
+        #storyturtle-controls { width: 300px; height:25px; }
+        #storyturtle-play { float: left; }
+        #storyturtle-edit { float: right; }
+    </style>
+
+
+    <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+<body>
+    <div id="header-container">
+        
+        <header class="wrapper clearfix">
+            <h1 id="title"><a href="/">Kevin Beaty</a></h1>
+            <nav>
+                <ul>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/projects/index.html">Projects</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/projects/storyturtle/index.html">Story Turtle</a>
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </header>
+        
+    </div>
+    <div id="main-container">
+        <div id="main" class="wrapper clearfix">
+            <article>
+                <section>
+                
+<canvas id="storyturtle-canvas" width="300" height="300"></canvas>
+
+                <div><textarea cols="30" rows="15" id="storyturtle-story" data-story="explosions">
+edd is a shark at 43 145
+fred is a pufferfish at 65 176
+bed is a jellyfish at 154 173
+bob is a shrimp at 234 6
+
+edd moves to 53 245
+fred moves to 45 166
+bed moves to 35 193
+bob moves to 6 82
+
+edd moves to 63 235
+fred moves to 55 156
+bed moves to 45 183
+bob moves to 16 72
+
+edd dies
+fred moves to 75 16
+bed moves to 143 261
+bob dies
+
+fred moves to 169 27
+bed moves to 160 57
+
+fred moves to 159 37
+bed moves to 159 67
+
+fred dies 
+bed moves to 225 225
+
+edd is a shark at 243 174
+bed moves to 243 174
+
+bed dies 
+edd moves to 163 28
+
+edd moves to 243 17
+
+edd moves to 163 28 
+
+edd moves to 243 16
+
+edd moves to 52 167
+
+edd dies
+</textarea></div>
+                
+
+<div id="storyturtle-controls">
+    <a href="#" id="storyturtle-play">Play!</a>
+    <a href="#" id="storyturtle-edit">Edit</a>
+</div>
+<div id="storyturtle-speaker"></div>
+
+                </section>
+            </article>
+            
+             
+            <aside>
+                
+                <ul>
+                    
+                    <li>
+                        <a href="/projects/storyturtle/dessert_shark.html">Dessert Shark</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects/storyturtle/explosions.html">Explosions</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects/storyturtle/fish.html">Fish</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects/storyturtle/lizard_catch.html">Lizard Catch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects/storyturtle/shark_bait.html">Shark Bait</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects/storyturtle/turtle_diner.html">Turtle Diner</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects/storyturtle/turtle_dinner.html">Turtle Dinner</a>
+                    </li>
+                    
+                </ul>
+                
+                
+
+                
+            </aside>
+            
+            
+        </div> 
+    </div>
+
+    <div id="footer-container">
+        <footer class="wrapper clearfix">
+        
+        <small id='created-by'>Created using <a href="http://kevinbeaty.net/projects/mvw">MVW</a></small>
+        
+        </footer>
+    </div>
+    
+
+    
+    <script src="/js/underarm/underarm-0.0.1.min.js"></script>
+    <script src="/js/storyturtle/storyturtle-0.0.5.min.js"></script>
+    <script>
+    var characters = [
+        'jellyfish',
+        'leopard',
+        'lizard',
+        'pufferfish',
+        'shark',
+        'shrimp',
+        'turtle']
+      , images = {}
+    _r(characters).each(function(character){
+        images[character] = '/img/storyturtle/'+character+'.png'
+    })
+
+    storyturtle({images:images});
+    </script>
+
+</body>
+</html>
