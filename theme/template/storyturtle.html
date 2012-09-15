@@ -1,0 +1,42 @@
+{% extends "default.html" %}
+{% block head %}
+{{ super() }}
+    <style type="text/css">
+        #storyturtle-story { display: none; }
+        #storyturtle-controls { width: 300px; height:25px; }
+        #storyturtle-play { float: left; }
+        #storyturtle-edit { float: right; }
+    </style>
+{% endblock %}
+
+{% block content %}
+<canvas id="storyturtle-canvas" width="300" height="300"></canvas>
+{{ super() }}
+
+<div id="storyturtle-controls">
+    <a href="#" id="storyturtle-play">Play!</a>
+    <a href="#" id="storyturtle-edit">Edit</a>
+</div>
+<div id="storyturtle-speaker"></div>
+{% endblock %}
+{% block endbody %}
+{{ super() }}
+    <script src="/js/underarm/underarm-0.0.1.min.js"></script>
+    <script src="/js/storyturtle/storyturtle-0.0.5.min.js"></script>
+    <script>
+    var characters = [
+        'jellyfish',
+        'leopard',
+        'lizard',
+        'pufferfish',
+        'shark',
+        'shrimp',
+        'turtle']
+      , images = {}
+    _r(characters).each(function(character){
+        images[character] = '/img/storyturtle/'+character+'.png'
+    })
+
+    storyturtle({images:images});
+    </script>
+{% endblock %}

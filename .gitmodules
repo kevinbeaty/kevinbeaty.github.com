@@ -13,3 +13,6 @@
 [submodule "lib/expect.js"]
 	path = lib/expect.js
 	url = git://github.com/LearnBoost/expect.js.git
+[submodule "projects/storyturtle"]
+	path = projects/storyturtle
+	url = git@github.com:kevinbeaty/storyturtle.git

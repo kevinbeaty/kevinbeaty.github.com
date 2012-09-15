@@ -1,5 +1,6 @@
 ## Projects
 
-* [Underarm](http://kevinbeaty.net/projects/underarm/index.html)
-* [MVW](http://kevinbeaty.net/projects/mvw/index.html)
+* [Underarm](underarm)
+* [MVW](mvw)
+* [Story Turtle](storyturtle)
 * [github](http://github.com/kevinbeaty)
