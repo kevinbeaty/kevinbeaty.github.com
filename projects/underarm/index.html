@@ -1,0 +1,220 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Underarm</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+    <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+<body>
+    <div id="header-container">
+        
+        <header class="wrapper clearfix">
+            <h1 id="title"><a href="/">Kevin Beaty</a></h1>
+            <nav>
+                <ul>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/projects/index.html">Projects</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/projects/underarm/index.html">Underarm</a>
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </header>
+        
+    </div>
+    <div id="main-container">
+        <div id="main" class="wrapper clearfix">
+            <article>
+                <section>
+                
+                <h2>Underarm</h2>
+<p><a href="http://travis-ci.org/kevinbeaty/underarm"><img alt="Build Status" src="https://secure.travis-ci.org/kevinbeaty/underarm.png" /></a></p>
+<p>Reactive Programming inspired by <a href="http://underscorejs.org">underscore</a> and
+<a href="https://github.com/github/ReactiveCocoa">Reactive Cocoa</a>.
+It is still experimental and the API is subject to change. Feeback is welcome.</p>
+<h3>Quick Tour</h3>
+<p>Using arrays and plain objects feels like underscore.</p>
+<div class="syntax"><pre><span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="p">,</span> <span class="nx">indeces</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="p">,</span> <span class="nx">lists</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1">// Functional</span>
+<span class="nx">_r</span><span class="p">.</span><span class="nx">each</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">list</span><span class="p">){</span>
+    <span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span>
+    <span class="nx">indeces</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span>
+    <span class="nx">lists</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">())</span>
+  <span class="p">})</span>
+
+<span class="c1">// Implicitly chained</span>
+<span class="nx">_r</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span><span class="k">return</span> <span class="nx">val</span><span class="o">*</span><span class="mi">2</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span><span class="k">return</span> <span class="nx">val</span><span class="o">*</span><span class="mi">3</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">list</span><span class="p">){</span>
+    <span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span>
+    <span class="nx">indeces</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span>
+    <span class="nx">lists</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">())</span>
+  <span class="p">})</span>
+
+<span class="nx">_r</span><span class="p">([{</span><span class="nx">a</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">c</span><span class="o">:</span><span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="nx">a</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span> <span class="nx">c</span><span class="o">:</span><span class="mi">4</span><span class="p">}])</span>
+  <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span><span class="k">return</span> <span class="nx">val</span><span class="p">.</span><span class="nx">a</span> <span class="o">===</span> <span class="mi">2</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">list</span><span class="p">){</span><span class="nx">result</span> <span class="o">=</span> <span class="nx">list</span><span class="p">})</span>
+</pre></div>
+
+
+<p>Any underarm chain is a promise, and deferreds can be
+created explicitly.</p>
+<div class="syntax"><pre><span class="kd">var</span> <span class="nx">deferred</span> <span class="o">=</span> <span class="nx">_r</span><span class="p">.</span><span class="nx">deferred</span><span class="p">()</span>
+  <span class="p">,</span> <span class="nx">resolve</span> <span class="o">=</span> <span class="nx">_r</span><span class="p">.</span><span class="nx">deferred</span><span class="p">()</span>
+
+<span class="nx">deferred</span><span class="p">.</span><span class="nx">promise</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">resolve</span><span class="p">.</span><span class="nx">promise</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">){</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">eql</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span>
+    <span class="p">})</span>
+
+<span class="nx">_r</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span> <span class="c1">// sends 43 as single value</span>
+  <span class="p">.</span><span class="nx">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">first</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span>
+    <span class="nx">resolve</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+
+
+<p>Iterators can be RegExps</p>
+<div class="syntax"><pre><span class="nx">_r</span><span class="p">([</span><span class="s1">&#39;bob is a cat&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;fred is a dog&#39;</span><span class="p">,</span> <span class="s1">&#39;nothing&#39;</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="sr">/(\w+) is a (\w+)/g</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">match</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">match</span> <span class="o">&amp;&amp;</span> <span class="p">[</span><span class="nx">match</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]]})</span>
+  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span><span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">val</span><span class="p">)})</span>
+
+<span class="nx">expect</span><span class="p">(</span><span class="nx">values</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">eql</span><span class="p">([</span>
+  <span class="p">[</span><span class="s1">&#39;bob&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">],</span> <span class="kc">null</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">],</span> <span class="kc">null</span><span class="p">])</span>
+
+<span class="nx">_r</span><span class="p">([</span><span class="s1">&#39;bob&#39;</span><span class="p">,</span> <span class="s1">&#39;frank&#39;</span><span class="p">,</span> <span class="s1">&#39;barb&#39;</span><span class="p">,</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="s1">&#39;ed&#39;</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="sr">/ed$/</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span><span class="nx">result</span> <span class="o">=</span> <span class="nx">val</span><span class="p">})</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">eql</span><span class="p">([</span><span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="s1">&#39;ed&#39;</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Chains can be detached and reused.</p>
+<div class="syntax"><pre><span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="kd">var</span> <span class="nx">reduce</span> <span class="o">=</span> <span class="nx">_r</span><span class="p">().</span><span class="nx">reduce</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">memo</span><span class="p">,</span> <span class="nx">val</span><span class="p">){</span><span class="k">return</span> <span class="nx">memo</span> <span class="o">/</span> <span class="nx">val</span><span class="p">})</span>
+
+<span class="nx">reduce</span>
+  <span class="p">.</span><span class="nx">attach</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span><span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">val</span><span class="p">)})</span>
+
+<span class="nx">expect</span><span class="p">(</span><span class="nx">values</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">eql</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span><span class="p">])</span>
+
+<span class="nx">values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nx">reduce</span>
+  <span class="p">.</span><span class="nx">attach</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span><span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">val</span><span class="p">)})</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">values</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">eql</span><span class="p">([</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">7</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Detached chains can be iterators (remember all chains are promises)</p>
+<div class="syntax"><pre><span class="kd">var</span> <span class="nx">deferred</span> <span class="o">=</span> <span class="nx">_r</span><span class="p">.</span><span class="nx">deferred</span><span class="p">()</span>
+  <span class="p">,</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nx">deferred</span><span class="p">.</span><span class="nx">promise</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">_r</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span><span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="mi">2</span><span class="p">}).</span><span class="nx">first</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span><span class="nx">result</span> <span class="o">=</span> <span class="nx">val</span><span class="p">})</span>
+<span class="nx">deferred</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">eql</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nx">_r</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">_r</span><span class="p">().</span><span class="nx">contains</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span><span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">val</span><span class="p">)})</span>
+
+<span class="nx">expect</span><span class="p">(</span><span class="nx">values</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">eql</span><span class="p">([</span><span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">])</span>
+
+<span class="nx">_r</span><span class="p">.</span><span class="nx">chain</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">([</span>
+      <span class="nx">_r</span><span class="p">().</span><span class="nx">find</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span><span class="k">return</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">})</span>
+    <span class="p">,</span> <span class="nx">_r</span><span class="p">().</span><span class="nx">contains</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
+  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span><span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">val</span><span class="p">)})</span>
+
+<span class="nx">expect</span><span class="p">(</span><span class="nx">values</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">eql</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">false</span><span class="p">]</span>
+  <span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="kc">false</span><span class="p">]</span>
+  <span class="p">,</span> <span class="p">[</span><span class="kc">undefined</span><span class="p">,</span> <span class="kc">true</span><span class="p">]</span>
+  <span class="p">,</span> <span class="p">[</span><span class="kc">undefined</span><span class="p">,</span> <span class="kc">false</span><span class="p">]])</span>
+</pre></div>
+
+
+<p>Putting it all together</p>
+<div class="syntax"><pre><span class="kd">var</span> <span class="nx">imageLoader</span> <span class="o">=</span> <span class="nx">_r</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">seq</span><span class="p">()</span> <span class="c1">// values of array or [key, val] of object</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">character</span><span class="p">){</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="nx">character</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="p">,</span> <span class="nx">src</span><span class="o">:</span> <span class="nx">character</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="p">,</span> <span class="nx">loadImage</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+          <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span>
+            <span class="p">,</span> <span class="nx">defer</span> <span class="o">=</span> <span class="nx">_r</span><span class="p">.</span><span class="nx">deferred</span><span class="p">()</span>
+          <span class="nx">self</span><span class="p">.</span><span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)</span>
+          <span class="nx">self</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">defer</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span>
+          <span class="p">}</span>
+          <span class="nx">self</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">src</span>
+          <span class="k">return</span> <span class="nx">defer</span><span class="p">.</span><span class="nx">promise</span>
+        <span class="p">}</span>
+    <span class="p">}})</span>
+  <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;loadImage&#39;</span><span class="p">)</span> <span class="c1">// notice this returns a promise</span>
+  <span class="p">.</span><span class="nx">pick</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;image&#39;</span><span class="p">)</span>
+
+<span class="kd">function</span> <span class="nx">loadImages</span><span class="p">(</span><span class="nx">images</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">imageLoader</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">images</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">loadImages</span><span class="p">({</span>
+      <span class="nx">bob</span><span class="o">:</span><span class="s1">&#39;http://somewhere/bob.png&#39;</span>
+    <span class="p">,</span> <span class="nx">fred</span><span class="o">:</span><span class="s1">&#39;http://somewhere/fred.png&#39;</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">errback</span><span class="p">,</span> <span class="nx">progback</span><span class="p">)</span>
+</pre></div>
+                
+                </section>
+            </article>
+            
+             
+            
+        </div> 
+    </div>
+
+    <div id="footer-container">
+        <footer class="wrapper clearfix">
+        
+        <small id='created-by'>Created using <a href="http://kevinbeaty.net/projects/mvw">MVW</a></small>
+        
+        </footer>
+    </div>
+</body>
+</html>
