@@ -1,4 +1,4 @@
-SRC=build/thebeaty
+SRC=build/kevinbeaty
 SRC_PROJECT=$(SRC)/projects
 PROJECTS=mvw
 

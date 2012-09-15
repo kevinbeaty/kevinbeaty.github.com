@@ -12,7 +12,7 @@ from mvw.config import Config
 # filters, extensions, tests, etc.
 # Custom extensions can be added to ${themedir}/extensions
 # which is added to python path if it exists.
-custom_titles = {'thebeaty':'the Beaty', 'mvw': 'MVW', 'faq': 'FAQ' }
+custom_titles = {'kevinbeaty':'Kevin Beaty', 'mvw': 'MVW', 'faq': 'FAQ' }
 class CustomConfig(Config):
     def title(self, path):
         title = Config.title(self, path)
@@ -32,7 +32,7 @@ config.site_root = '/'
 
 # Directories are relative to mvw root (.mvw), but
 # can be absolute.
-config.sourcedir = '../build/thebeaty'
+config.sourcedir = '../build/kevinbeaty'
 config.outputdir = '../projects/kevinbeaty.github.com'
 
 # Default theme will be used if themedir does not exist
