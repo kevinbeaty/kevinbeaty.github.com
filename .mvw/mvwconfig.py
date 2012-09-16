@@ -65,7 +65,8 @@ config.themedir = '../theme'
 # ${themedir}/extensions which is added to the
 # python path if it exists.
 #
-#config.theme('default',
-#   content_template='default.html',
-#   markdown_extensions=[
-#        'codehilite(css_class=syntax,guess_lang=False)'])
+config.theme('default',
+   content_template='default.html',
+   markdown_extensions=[
+        'codehilite(css_class=syntax,guess_lang=False)',
+        'fenced_code'])
